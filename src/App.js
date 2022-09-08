@@ -1,10 +1,10 @@
-import Ghost from "./components/ghostCard";
+import Team from "./components/team";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Ghost />
+      <Team />
     </div>
   );
 }
