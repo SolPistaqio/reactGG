@@ -1,5 +1,9 @@
-import GhostCard from "./ghostCard";
 import React, { Component } from "react";
+
+import GhostCard from "./ghostCard";
+import AddGhost from "./addPlayer";
+
+import "./css/team.css";
 
 class Team extends Component {
   state = {
@@ -28,22 +32,27 @@ class Team extends Component {
     ],
   };
   render() {
+    const playerTeam = this.state.team;
+    const needsToAdd = 3 - playerTeam.length;
+    let addButtons = "";
+    if (needsToAdd > 0) {
+      addButtons = [...Array(needsToAdd)].map((e, index) => (
+        <AddGhost key={index} />
+      ));
+    }
     return (
-      <div
-        style={{
-          padding: "20px",
-          border: "3px solid #1919AE",
-          margin: "20px",
-          backgroundColor: "black",
-          display: "grid",
-          placeItems: "center",
-          gridTemplate: "1fr 4fr / 1fr 1fr 1fr",
-        }}
-      >
-        <h1 style={{ color: "white", gridColumn: "1 / 4" }}>YOUR TEAM</h1>
-        <GhostCard />
-        <GhostCard />
-        <GhostCard />
+      <div className="team">
+        <h1
+          style={{ color: "white", textAlign: "center", gridColumn: "1 / 4" }}
+        >
+          YOUR TEAM
+        </h1>
+
+        {playerTeam.map((ghost, index) => {
+          return <GhostCard ghost={ghost} key={index} />;
+        })}
+
+        {addButtons}
       </div>
     );
   }

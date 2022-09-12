@@ -29,15 +29,6 @@ class GhostCard extends Component {
     this.setState({ color1: col1, color2: col2 });
   };
 
-  renderMissingHealth = () => {
-    if (this.state.currentHealth < this.state.maxHealth) {
-      const numOfHearts = this.state.maxHealth - this.state.currentHealth;
-      for (let i = 0; i < numOfHearts; i++) {
-        return <Icon icon="ant-design:heart-outlined" height="30px" />;
-      }
-    }
-  };
-
   componentWillMount() {
     this.setGhostColors();
   }
@@ -57,22 +48,13 @@ class GhostCard extends Component {
       <div
         style={{
           display: "inline-grid",
-          width: "250px",
+          minWidth: "250px",
           placeItems: "center",
+          gridTemplate: "autofit / 3fr 1fr",
         }}
       >
-        <Ghost3
-          color1={this.state.color1}
-          color2={this.state.color2}
-          style={{
-            display: "block",
-          }}
-        />
-        <div
-          style={{
-            display: "block",
-          }}
-        >
+        <Ghost3 color1={this.state.color1} color2={this.state.color2} />
+        <div>
           {healthBar.map((heart, index) => (
             <Icon
               icon={"ant-design:" + heart}

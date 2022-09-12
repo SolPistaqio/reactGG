@@ -1,0 +1,9 @@
+.add {
+  margin-left: 50px;
+  margin-right: 50px;
+  color: #fec302;
+}
+
+:hover .add {
+  color: #1919ae;
+}

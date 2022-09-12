@@ -1,9 +1,8 @@
 import Team from "./components/team";
-import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div style={{ display: "grid", placeItems: "center", height: "100%" }}>
       <Team />
     </div>
   );
