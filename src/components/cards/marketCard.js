@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import GhostCard from "./ghostCard";
-import Confirmation from "./confirmationDialog";
+import Confirmation from "../actions/confirmationDialog";
 
 class MarketCard extends Component {
   state = {

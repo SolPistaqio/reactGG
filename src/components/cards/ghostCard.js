@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Ghost3 from "./characters/Ghost3";
+import Ghost3 from "../characters/Ghost3";
 import { Icon } from "@iconify/react";
 
 class GhostCard extends Component {

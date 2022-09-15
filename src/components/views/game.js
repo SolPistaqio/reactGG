@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Team from "./team";
+import Team from "../cards/ghostTeamCard";
 
 class Game extends Component {
   render() {

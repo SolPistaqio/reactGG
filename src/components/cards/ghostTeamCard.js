@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import TeamCard from "./teamCard";
-import AddGhost from "./addPlayer";
+import AddGhost from "../actions/addPlayer";
 
 import "./css/team.css";
 
