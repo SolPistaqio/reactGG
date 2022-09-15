@@ -6,4 +6,37 @@ body,
   height: 100%;
   width: 100%;
   background-color: black;
+  color: white;
+  font-family: "PressStart2P-Regular";
+}
+
+button {
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+  font-weight: bold;
+  padding: 15px 15px 15px 15px;
+  background-color: #fbf100;
+  text-shadow: -1px -1px #390d75, 1px 1px white;
+  color: #555301;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+  box-shadow: 0 0.3em #7e7a01;
+  cursor: pointer;
+  font-family: "PressStart2P-Regular";
+  font-size: 20pt;
+}
+
+button:active {
+  box-shadow: none;
+  position: relative;
+  top: 0.3em;
+}
+
+@font-face {
+  font-family: "PressStart2P-Regular";
+  src: local("PressStart2P-Regular"),
+    url(./components/css/fonts/PressStart2P-Regular.ttf) format("woff2");
 }

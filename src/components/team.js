@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import GhostCard from "./ghostCard";
+import TeamCard from "./teamCard";
 import AddGhost from "./addPlayer";
 
 import "./css/team.css";
@@ -22,13 +22,6 @@ class Team extends Component {
         color2: "",
         currentHealth: 2,
       },
-      {
-        type: 3,
-        maxHealth: 2,
-        color1: "",
-        color2: "",
-        currentHealth: 1,
-      },
     ],
   };
   render() {
@@ -42,14 +35,10 @@ class Team extends Component {
     }
     return (
       <div className="team">
-        <h1
-          style={{ color: "white", textAlign: "center", gridColumn: "1 / 4" }}
-        >
-          YOUR TEAM
-        </h1>
+        <h1 style={{ textAlign: "center", gridColumn: "1 / 4" }}>YOUR TEAM</h1>
 
         {playerTeam.map((ghost, index) => {
-          return <GhostCard ghost={ghost} key={index} />;
+          return <TeamCard ghost={ghost} key={index} />;
         })}
 
         {addButtons}
