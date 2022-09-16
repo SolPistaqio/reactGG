@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
-import "./css/addButton.css";
+import "../css/addButton.css";
 
 class AddGhost extends Component {
   state = {

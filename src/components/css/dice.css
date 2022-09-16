@@ -1,0 +1,48 @@
+.dice {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  font-size: x-large;
+}
+.dice:before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100px;
+  height: 100px;
+  left: 0;
+  top: 100px;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: border-color 0.3s;
+  -moz-transform: rotate(45deg);
+  -moz-transition: border-color 0.3s;
+  transform: rotate(45deg);
+}
+.result {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-top: 25px;
+  display: inline-block;
+}
+.result:before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 80px;
+  height: 80px;
+  left: 0;
+  top: -30px;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #fbf100;
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: border-color 0.3s;
+  -moz-transform: rotate(45deg);
+  -moz-transition: border-color 0.3s;
+  transform: rotate(45deg);
+}

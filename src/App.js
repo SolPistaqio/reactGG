@@ -1,11 +1,10 @@
-import Game from "./components/game";
+import Router from "./components/UI/router";
 
 function App() {
   return (
-    <div style={{ display: "grid", placeItems: "center", height: "100%" }}>
-      <Game />
-      {/* <Confirmation text="Are you sure you want to do this?" /> */}
-    </div>
+    // <div style={{ display: "grid", placeItems: "center", height: "100%" }}>
+    <Router />
+    //</div>
   );
 }
 
