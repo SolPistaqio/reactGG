@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
-import GhostCard from "./ghostCard";
-import Confirmation from "../actions/confirmationDialog";
+import GhostCard from "../characters/ghostCard";
+import Confirmation from "../../actions/confirmationDialog";
 
-class MarketCard extends Component {
+class TeamCard extends Component {
   state = {
     ghostChosen: false,
   };
@@ -13,7 +13,7 @@ class MarketCard extends Component {
     if (this.state.ghostChosen) {
       confirm = (
         <Confirmation
-          text="Are you sure you want to buy this ghost for 3 coins?"
+          text="Are you sure you want to replace this ghost?"
           confirm={() => console.log("yay!")}
           cancel={() => this.setState({ ghostChosen: false })}
         />
@@ -24,30 +24,22 @@ class MarketCard extends Component {
         style={{
           display: "inline-grid",
           placeItems: "end",
-          border: "3px dotted #FFBB90",
-          padding: "20px",
-          margin: "20px",
         }}
       >
         <p style={{ float: "right", fontSize: "20pt", margin: "0" }}>
-          3
           <Icon
-            icon="mingcute:copper-coin-fill"
-            color="#fbf100"
+            icon="fa:refresh"
+            color="white"
             height="40px"
+            onClick={() => this.setState({ ghostChosen: true })}
           />
         </p>
         <GhostCard />
-        <button
-          onClick={() => this.setState({ ghostChosen: true })}
-          style={{ justifySelf: "center", marginTop: "10px" }}
-        >
-          BUY
-        </button>
+
         {confirm}
       </div>
     );
   }
 }
 
-export default MarketCard;
+export default TeamCard;

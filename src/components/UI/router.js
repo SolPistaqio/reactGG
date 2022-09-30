@@ -38,6 +38,13 @@ class Router extends Component {
           </div>
         );
         break;
+      default:
+        viewToShow = (
+          <div>
+            <NavBar />
+            <Game />
+          </div>
+        );
     }
     return (
       <div>

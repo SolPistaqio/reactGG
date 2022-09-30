@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
-import Ghost3Small from "../characters/Ghost3-small";
+import Ghost3Small from "../../characterIMG/Ghost3-small";
 
 class GhostCardSmall extends Component {
   constructor(props) {

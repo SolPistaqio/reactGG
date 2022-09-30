@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-import TeamCard from "./teamCard";
-import AddGhost from "../actions/addPlayer";
+import TeamCard from "../player team/teamCard";
+import AddGhost from "../../actions/addPlayer";
 
-import "../css/team.css";
+import "../../css/team.css";
 
 class Team extends Component {
   state = {

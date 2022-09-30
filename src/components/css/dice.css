@@ -1,6 +1,6 @@
 .dice {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   position: relative;
   display: inline-block;
   text-align: center;
@@ -10,8 +10,8 @@
   position: absolute;
   display: block;
   content: "";
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   left: 0;
   top: 100px;
   right: 0;
@@ -23,8 +23,8 @@
   transform: rotate(45deg);
 }
 .result {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   position: relative;
   margin-top: 25px;
   display: inline-block;
@@ -33,10 +33,10 @@
   position: absolute;
   display: block;
   content: "";
-  width: 80px;
-  height: 80px;
-  left: 0;
-  top: -30px;
+  width: 40px;
+  height: 40px;
+  left: -4px;
+  top: -10px;
   right: 0;
   bottom: 0;
   border: 2px solid #fbf100;

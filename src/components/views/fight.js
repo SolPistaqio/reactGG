@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Dice from "../cards/diceCard";
-import GhostCardSmall from "../cards/ghostCardSmall";
+
+import Duel from "../cards/fight/duelCard";
 
 class Fight extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Fight extends Component {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr 2fr",
+          gridTemplateRows: "1fr 1fr 1fr",
           placeItems: "center",
           padding: "20px",
           border: "3px solid #1919ae",
@@ -21,26 +21,7 @@ class Fight extends Component {
           gridRowGap: "30px",
         }}
       >
-        <GhostCardSmall />
-        <div style={{ visibility: "hidden" }}>Result</div>
-        <Dice />
-        <Dice />
-        <div>Result</div>
-        <GhostCardSmall />
-
-        <GhostCardSmall />
-        <div>Result</div>
-        <Dice />
-        <Dice />
-        <div>Result</div>
-        <GhostCardSmall />
-
-        <GhostCardSmall />
-        <div>Result</div>
-        <Dice />
-        <Dice />
-        <div>Result</div>
-        <GhostCardSmall />
+        <Duel />
       </div>
     );
   }
