@@ -1,12 +1,17 @@
-import { Component } from "react";
+import { React, Component } from "react";
 import Fight from "../views/fight";
 import Start from "../views/firstScreen";
 import Game from "../views/game";
 import Market from "../views/market";
 import NavBar from "./navBar";
 
+export const GameContext = React.createContext();
+
 class Router extends Component {
-  state = { currentView: "start" };
+  state = { coins: 10, Userteam: [], currentView: "start" };
+  changeCurrentView(view) {
+    this.setState({ currentView: view });
+  }
 
   render() {
     let viewToShow = <Start />;
@@ -47,7 +52,7 @@ class Router extends Component {
         );
     }
     return (
-      <div>
+      <GameContext.Provider value={this.state}>
         {viewToShow}
         <span onClick={() => this.setState({ currentView: "start" })}>
           Start
@@ -62,7 +67,7 @@ class Router extends Component {
         <span onClick={() => this.setState({ currentView: "fight" })}>
           Fight
         </span>
-      </div>
+      </GameContext.Provider>
     );
   }
 }

@@ -5,7 +5,7 @@ class Start extends Component {
     return (
       <div style={{ display: "grid", placeItems: "center" }}>
         <img src="/GG30.gif" alt="GhostGame logo" />
-        <button>START</button>
+        <button onClick={() => (gameData.currentView = "game")}>START</button>
       </div>
     );
   }
