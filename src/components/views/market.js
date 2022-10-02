@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import MarketCard from "../cards/characters/ghostMarketCard";
+import { createGhosts } from "../util/ghostFactory";
 
 class Market extends Component {
+  state = { market: [] };
+  componentDidMount() {
+    this.setState({ market: [...this.state.market, ...createGhosts(9)] });
+  }
   render() {
     return (
       <div
@@ -19,15 +24,9 @@ class Market extends Component {
         >
           Ghost Market
         </h1>
-        <MarketCard />
-        <MarketCard />
-        <MarketCard />
-        <MarketCard />
-        <MarketCard />
-        <MarketCard />
-        <MarketCard />
-        <MarketCard />
-        <MarketCard />
+        {this.state.market.map((ghost, index) => (
+          <MarketCard ghost={ghost} key={index} />
+        ))}
       </div>
     );
   }

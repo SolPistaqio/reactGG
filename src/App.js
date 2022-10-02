@@ -1,7 +1,7 @@
-import Router from "./components/UI/router";
+import Game from "./components/Game";
 
 function App() {
-  return <Router />;
+  return <Game />;
 }
 
 export default App;

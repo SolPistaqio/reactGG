@@ -34,7 +34,7 @@ class TeamCard extends Component {
             onClick={() => this.setState({ ghostChosen: true })}
           />
         </p>
-        <GhostCard />
+        <GhostCard ghost={this.props.ghost} />
 
         {confirm}
       </div>

@@ -9,11 +9,16 @@ class MarketCard extends Component {
   };
 
   render() {
+    const price = this.props.ghost.price;
     let confirm = "";
     if (this.state.ghostChosen) {
       confirm = (
         <Confirmation
-          text="Are you sure you want to buy this ghost for 3 coins?"
+          text={
+            "Are you sure you want to buy this ghost for " +
+            { price } +
+            " coins?"
+          }
           confirm={() => console.log("yay!")}
           cancel={() => this.setState({ ghostChosen: false })}
         />
@@ -30,14 +35,14 @@ class MarketCard extends Component {
         }}
       >
         <p style={{ float: "right", fontSize: "20pt", margin: "0" }}>
-          3
+          {price}
           <Icon
             icon="mingcute:copper-coin-fill"
             color="#fbf100"
             height="40px"
           />
         </p>
-        <GhostCard />
+        <GhostCard ghost={this.props.ghost} />
         <button
           onClick={() => this.setState({ ghostChosen: true })}
           style={{ justifySelf: "center", marginTop: "10px" }}

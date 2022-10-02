@@ -1,59 +1,37 @@
 import React, { Component } from "react";
+import Ghost1 from "../../characterIMG/Ghost1";
+import Ghost2 from "../../characterIMG/Ghost2";
 import Ghost3 from "../../characterIMG/Ghost3";
 import { Icon } from "@iconify/react";
 
 class GhostCard extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      type: 1,
-      maxHealth: 3,
-      color1: "",
-      color2: "",
-      currentHealth: 2,
-    };
-  }
-
-  getGhostColor = () => {
-    const letters = "0123456789ABCDEF";
-    let ghostColor = "#";
-    for (var i = 0; i < 6; i++) {
-      ghostColor += letters[Math.floor(Math.random() * 16)];
-    }
-    return ghostColor;
-  };
-
-  setGhostColors = () => {
-    const col1 = this.getGhostColor();
-    const col2 = this.getGhostColor();
-    this.setState({ color1: col1, color2: col2 });
-  };
-
-  componentWillMount() {
-    this.setGhostColors();
-  }
-
   render() {
     const healthBar = [];
-    for (let i = 0; i < this.state.currentHealth; i++) {
+    for (let i = 0; i < this.props.ghost.currentHealth; i++) {
       healthBar.push("heart-filled");
     }
-    if (this.state.currentHealth < this.state.maxHealth) {
-      const numOfHearts = this.state.maxHealth - this.state.currentHealth;
+    if (this.props.ghost.currentHealth < this.props.ghost.maxHealth) {
+      const numOfHearts = this.props.maxHealth - this.props.currentHealth;
       for (let i = 0; i < numOfHearts; i++) {
         healthBar.push("heart-outlined");
       }
     }
+    const ghosts = { 1: Ghost1, 2: Ghost2, 3: Ghost3 };
+    const Ghost = ghosts[this.props.ghost.type];
     return (
       <div
         style={{
           display: "inline-grid",
           minWidth: "250px",
           placeItems: "center",
-          gridTemplate: "autofit / 3fr 1fr",
+          gridTemplateRows: "250px 1fr",
+          alignItems: "end",
         }}
       >
-        <Ghost3 color1={this.state.color1} color2={this.state.color2} />
+        <Ghost
+          color1={this.props.ghost.color1}
+          color2={this.props.ghost.color2}
+        />
         <div>
           {healthBar.map((heart, index) => (
             <Icon
