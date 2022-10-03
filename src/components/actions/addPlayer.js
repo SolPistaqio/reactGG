@@ -7,9 +7,7 @@ class AddGhost extends Component {
   state = {
     color: "#fec302",
   };
-  openMarket(e) {
-    console.log("open it!");
-  }
+
   render() {
     return (
       <GameContext.Consumer>

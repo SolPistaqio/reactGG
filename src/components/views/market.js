@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MarketCard from "../cards/characters/ghostMarketCard";
 import { createGhosts } from "../util/ghostFactory";
+import { GameContext } from "../Game";
 
 class Market extends Component {
   state = { market: [] };
@@ -19,6 +20,11 @@ class Market extends Component {
           gridTemplateColumns: "repeat(3, 1fr)",
         }}
       >
+        <GameContext.Consumer>
+          {({ abortMarketOperation }) => (
+            <button onClick={() => abortMarketOperation()}>Back To Team</button>
+          )}
+        </GameContext.Consumer>
         <h1
           style={{ color: "white", textAlign: "center", gridColumn: "1 / 4" }}
         >

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import GhostCard from "../characters/ghostCard";
 import Confirmation from "../../actions/confirmationDialog";
+import { GameContext } from "../../Game";
 
 class TeamCard extends Component {
   state = {
@@ -12,11 +13,18 @@ class TeamCard extends Component {
     let confirm = "";
     if (this.state.ghostChosen) {
       confirm = (
-        <Confirmation
-          text="Are you sure you want to replace this ghost?"
-          confirm={() => console.log("yay!")}
-          cancel={() => this.setState({ ghostChosen: false })}
-        />
+        <GameContext.Consumer>
+          {({ pickActiveGhost, toggleView }) => (
+            <Confirmation
+              text="Are you sure you want to replace this ghost?"
+              confirm={() => toggleView("market")}
+              cancel={() => {
+                pickActiveGhost({});
+                this.setState({ ghostChosen: false });
+              }}
+            />
+          )}
+        </GameContext.Consumer>
       );
     }
     return (
@@ -27,12 +35,19 @@ class TeamCard extends Component {
         }}
       >
         <p style={{ float: "right", fontSize: "20pt", margin: "0" }}>
-          <Icon
-            icon="fa:refresh"
-            color="white"
-            height="40px"
-            onClick={() => this.setState({ ghostChosen: true })}
-          />
+          <GameContext.Consumer>
+            {({ pickActiveGhost }) => (
+              <Icon
+                icon="fa:refresh"
+                color="white"
+                height="40px"
+                onClick={() => {
+                  pickActiveGhost(this.props.ghost);
+                  this.setState({ ghostChosen: true });
+                }}
+              />
+            )}
+          </GameContext.Consumer>
         </p>
         <GhostCard ghost={this.props.ghost} />
 

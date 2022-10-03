@@ -15,11 +15,16 @@ class Game extends Component {
       activeGhost: {},
       toggleView: this.toggleView,
       teamAdd: this.teamAdd,
+      ghostBuy: this.ghostBuy,
+      pickActiveGhost: this.pickActiveGhost,
+      abortMarketOperation: this.abortMarketOperation,
     };
-    // this.teamAdd = this.teamAdd.bind(this);
-    // this.toggleView = this.toggleView.bind(this);
   }
 
+  abortMarketOperation = () => {
+    this.setState({ activeGhost: {} });
+    this.toggleView("game");
+  };
   toggleView = (newView) => {
     console.log(`Navigating to ${newView}`);
     this.setState({ currentView: newView });
@@ -27,19 +32,31 @@ class Game extends Component {
   coinOperation(amountToAdd) {
     this.setState({ coins: this.state.coins + amountToAdd });
   }
-  teamAdd(ghost) {
+  teamAdd = (ghost) => {
     console.log(ghost);
     this.setState({ userTeam: [...this.state.userTeam, ...ghost] });
-  }
-  teamRepalce(replacee, replacement) {
+  };
+  teamReplace(replacee, replacement) {
     const team = this.state.userTeam;
     const order = team.indexOf(replacee);
     team[order] = replacement;
     this.setState({ userTeam: team });
   }
-  pickActiveGhost(ghost) {
+  pickActiveGhost = (ghost) => {
+    console.log(ghost);
     this.setState({ activeGhost: ghost });
-  }
+  };
+
+  ghostBuy = (ghost) => {
+    if (this.state.activeGhost.type) {
+      this.teamReplace(this.state.activeGhost, ghost);
+      this.setState({ activeGhost: {} });
+    } else {
+      this.teamAdd([ghost]);
+    }
+    this.coinOperation(0 - ghost.price);
+    this.toggleView("game");
+  };
 
   componentDidMount() {
     if (this.state.round === 1) {

@@ -2,26 +2,40 @@ import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import GhostCard from "./ghostCard";
 import Confirmation from "../../actions/confirmationDialog";
+import { GameContext } from "../../Game";
 
 class MarketCard extends Component {
   state = {
     ghostChosen: false,
+    enoughFunds: true,
   };
+
+  componentDidMount() {
+    MarketCard.contextType = GameContext;
+    const coins = this.context.coins;
+    console.log("coins " + coins);
+    if (this.props.ghost.price > coins) {
+      this.setState({ enoughFunds: false });
+    }
+  }
 
   render() {
     const price = this.props.ghost.price;
+    const confirmationText = `Are you sure you want to buy this ghost for ${price} coins`;
     let confirm = "";
     if (this.state.ghostChosen) {
       confirm = (
-        <Confirmation
-          text={
-            "Are you sure you want to buy this ghost for " +
-            { price } +
-            " coins?"
-          }
-          confirm={() => console.log("yay!")}
-          cancel={() => this.setState({ ghostChosen: false })}
-        />
+        <GameContext.Consumer>
+          {({ ghostBuy }) => (
+            <Confirmation
+              text={confirmationText}
+              confirm={() => {
+                ghostBuy(this.props.ghost);
+              }}
+              cancel={() => this.setState({ ghostChosen: false })}
+            />
+          )}
+        </GameContext.Consumer>
       );
     }
     return (
@@ -43,12 +57,17 @@ class MarketCard extends Component {
           />
         </p>
         <GhostCard ghost={this.props.ghost} />
-        <button
-          onClick={() => this.setState({ ghostChosen: true })}
-          style={{ justifySelf: "center", marginTop: "10px" }}
-        >
-          BUY
-        </button>
+        {this.state.enoughFunds ? (
+          <button
+            onClick={() => this.setState({ ghostChosen: true })}
+            style={{ justifySelf: "center", marginTop: "10px" }}
+          >
+            BUY
+          </button>
+        ) : (
+          <p>Not enough coins</p>
+        )}
+
         {confirm}
       </div>
     );
