@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Team from "../cards/player team/ghostTeamCard";
-import { GameContext } from "../Game";
+import { GameContext } from "../context";
 
 class Game extends Component {
   render() {

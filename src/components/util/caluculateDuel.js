@@ -5,7 +5,7 @@ function d10() {
 }
 
 function ghostMove(ghost) {
-  const throws = Array.from(new Array(ghost.dice), (x) => d10);
+  const throws = Array.from(new Array(ghost.dice), (x) => d10());
   const result = ghost.mod + Math.max(...throws);
   return { throws, result };
 }
@@ -14,7 +14,7 @@ export function calculateDuel(ghost) {
   const enemy = createGhost();
   const playerMove = ghostMove(ghost);
   const enemyMove = ghostMove(enemy);
-
+  //if result is a tie
   return {
     won: playerMove.result > enemyMove.result,
     player: { ghost, ...playerMove },

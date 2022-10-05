@@ -1,10 +1,11 @@
-import { React, Component, createContext } from "react";
+import { React, Component } from "react";
 import Router from "./UI/router";
 import { createGhosts } from "./util/ghostFactory";
-
-export const GameContext = createContext({});
+import { GameContext } from "./context";
+//export const GameContext = createContext({});
 
 class Game extends Component {
+  static contextType = GameContext;
   constructor(props) {
     super(props);
     this.state = {

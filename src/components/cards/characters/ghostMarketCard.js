@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import GhostCard from "./ghostCard";
 import Confirmation from "../../actions/confirmationDialog";
-import { GameContext } from "../../Game";
+import { GameContext } from "../../context";
 
 class MarketCard extends Component {
   static contextType = GameContext;

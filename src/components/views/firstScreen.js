@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { GameContext } from "../Game";
+import { GameContext } from "../context";
 
 class Start extends Component {
   render() {

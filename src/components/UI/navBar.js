@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
-import { GameContext } from "../Game";
+import { GameContext } from "../context";
 
 class NavBar extends Component {
   render() {

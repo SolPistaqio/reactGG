@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import Duel from "../cards/fight/duelCard";
 import { calculateDuel } from "../util/caluculateDuel";
-import { GameContext } from "../Game";
+import { GameContext } from "../context";
 
 class Fight extends Component {
   static contextType = GameContext;
