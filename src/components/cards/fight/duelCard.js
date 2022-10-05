@@ -6,8 +6,6 @@ import Result from "./resultCard";
 
 class Duel extends Component {
   render() {
-    const roll1 = { rolls: [10, 7], modificator: 0, finalResult: 10 };
-    const roll2 = { rolls: [10], modificator: 1, finalResult: 11 };
     return (
       <div
         style={{
@@ -19,11 +17,19 @@ class Duel extends Component {
         }}
       >
         <Result win={this.props.duel.won} />
-        <GhostCardSmall />
-        <Roll roll={roll1} />
+        <GhostCardSmall ghost={this.props.duel.player.ghost} />
+        <Roll
+          throws={this.props.duel.player.throws}
+          result={this.props.duel.player.result}
+          mod={this.props.duel.player.ghost.mod}
+        />
         <Icon icon="charm:swords" color="white" height="80px" />
-        <Roll roll={roll2} />
-        <GhostCardSmall />
+        <Roll
+          throws={this.props.duel.enemy.throws}
+          result={this.props.duel.enemy.result}
+          mod={this.props.duel.enemy.ghost.mod}
+        />
+        <GhostCardSmall ghost={this.props.duel.enemy.ghost} />
         <Result win={!this.props.duel.won} />
       </div>
     );

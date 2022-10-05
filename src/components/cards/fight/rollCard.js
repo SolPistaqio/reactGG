@@ -3,7 +3,7 @@ import Dice from "./diceCard";
 
 class Roll extends Component {
   render() {
-    const rolls = this.props.roll.rolls;
+    const rolls = this.props.throws;
     console.log(rolls);
     const hasA10 = rolls.includes(10);
     if (hasA10) {
@@ -34,12 +34,8 @@ class Roll extends Component {
         }}
       >
         {diceDisplay}
-        <div style={{ whiteSpace: "nowrap" }}>
-          + {this.props.roll.modificator}
-        </div>
-        <div style={{ whiteSpace: "nowrap" }}>
-          &nbsp; = {this.props.roll.finalResult}
-        </div>
+        <div style={{ whiteSpace: "nowrap" }}>+ {this.props.mod}</div>
+        <div style={{ whiteSpace: "nowrap" }}>&nbsp; = {this.props.result}</div>
       </div>
     );
   }

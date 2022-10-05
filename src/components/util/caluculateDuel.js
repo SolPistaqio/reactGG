@@ -14,7 +14,12 @@ export function calculateDuel(ghost) {
   const enemy = createGhost();
   const playerMove = ghostMove(ghost);
   const enemyMove = ghostMove(enemy);
+
   //if result is a tie
+  if (playerMove.result === enemyMove.result) {
+    calculateDuel(ghost);
+  }
+
   return {
     won: playerMove.result > enemyMove.result,
     player: { ghost, ...playerMove },
