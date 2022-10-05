@@ -7,7 +7,7 @@ function randomColor() {
   return color;
 }
 
-function createGhost() {
+export function createGhost() {
   const ghost = {};
   ghost.type = Math.floor(Math.random() * 3) + 1;
   ghost.price = Math.floor(Math.random() * 3) + 2;

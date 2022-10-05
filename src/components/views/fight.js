@@ -1,12 +1,33 @@
 import React, { Component } from "react";
 
 import Duel from "../cards/fight/duelCard";
+import { calculateDuel } from "../util/caluculateDuel";
+import { GameContext } from "../Game";
 
 class Fight extends Component {
+  static contextType = GameContext;
   constructor(props) {
     super(props);
   }
-  state = {};
+  state = {
+    duels: [],
+    victory: null,
+  };
+
+  componentDidMount() {
+    const team = this.context.userTeam;
+    console.log(this.context.userTeam);
+    const duels = [];
+    let wins = 0;
+    team.forEach((ghost) => {
+      const fight = calculateDuel(ghost);
+      duels.push(fight);
+      if (fight.won) {
+        wins += 1;
+      }
+    });
+    this.setState({ duels: [...duels], victory: wins >= 2 });
+  }
   render() {
     return (
       <div
@@ -21,7 +42,9 @@ class Fight extends Component {
           gridRowGap: "30px",
         }}
       >
-        <Duel />
+        {this.state.duels.map((duel, i) => (
+          <Duel duel={duel} key={i} />
+        ))}
       </div>
     );
   }

@@ -5,13 +5,13 @@ import Confirmation from "../../actions/confirmationDialog";
 import { GameContext } from "../../Game";
 
 class MarketCard extends Component {
+  static contextType = GameContext;
   state = {
     ghostChosen: false,
     enoughFunds: true,
   };
 
   componentDidMount() {
-    MarketCard.contextType = GameContext;
     const coins = this.context.coins;
     console.log("coins " + coins);
     if (this.props.ghost.price > coins) {

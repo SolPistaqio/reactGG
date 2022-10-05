@@ -18,13 +18,13 @@ class Duel extends Component {
           width: "100%",
         }}
       >
-        <Result win />
+        <Result win={this.props.duel.win} />
         <GhostCardSmall />
         <Roll roll={roll1} />
         <Icon icon="charm:swords" color="white" height="80px" />
         <Roll roll={roll2} />
         <GhostCardSmall />
-        <Result />
+        <Result win={!this.props.duel.win} />
       </div>
     );
   }
