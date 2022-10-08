@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Icon } from "@iconify/react";
 import Ghost3Small from "../../characterIMG/Ghost3-small";
 import Ghost1Small from "../../characterIMG/Ghost1-small";
 import Ghost2Small from "../../characterIMG/Ghost2-small";
 
-class GhostCardSmall extends Component {
+class GhostCardSmall extends PureComponent {
   render() {
     const healthBar = [];
     for (let i = 0; i < this.props.currentHealth; i++) {
@@ -22,8 +22,9 @@ class GhostCardSmall extends Component {
       <div
         style={{
           display: "inline-grid",
-          minWidth: "170px",
+          minWidth: "70px",
           placeItems: "center",
+          margin: "10px",
           gridTemplate: "autofit / 3fr 1fr",
         }}
       >

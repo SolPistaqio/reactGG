@@ -8,11 +8,11 @@ class Ghost2Small extends Component {
         <Icon
           icon="icon-park-solid:degree-hat"
           color={this.props.color1}
-          height="100px"
+          height="50px"
           style={{
             display: "block",
-            marginLeft: "17px",
-            marginBottom: "-50px",
+            marginLeft: "8px",
+            marginBottom: "-25px",
             position: "relative",
             zIndex: 2,
           }}
@@ -20,7 +20,7 @@ class Ghost2Small extends Component {
         <Icon
           icon="mdi:ghost"
           color={this.props.color2}
-          height="130px"
+          height="65px"
           style={{ display: "block", position: "relative", zIndex: 1 }}
         />
       </div>

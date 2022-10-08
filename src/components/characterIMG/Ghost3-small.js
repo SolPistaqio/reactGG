@@ -8,12 +8,12 @@ class Ghost3Small extends Component {
         <Icon
           icon="icon-park-solid:baseball-bat"
           color={this.props.color1}
-          height="100px"
+          height="50px"
           hFlip
           style={{
             display: "block",
-            marginLeft: "60px",
-            marginBottom: "-100px",
+            marginLeft: "30px",
+            marginBottom: "-50px",
             position: "relative",
             zIndex: 2,
           }}
@@ -21,7 +21,7 @@ class Ghost3Small extends Component {
         <Icon
           icon="mdi:ghost"
           color={this.props.color2}
-          height="130px"
+          height="65px"
           style={{ display: "block", position: "relative", zIndex: 1 }}
         />
       </div>

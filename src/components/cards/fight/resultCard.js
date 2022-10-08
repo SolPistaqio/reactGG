@@ -6,9 +6,9 @@ class Result extends Component {
     return (
       <>
         {this.props.win ? (
-          <Icon icon="charm:trophy" color="#fbf100" height="80px" />
+          <Icon icon="charm:trophy" color="#fbf100" height="50px" />
         ) : (
-          <Icon icon="charm:skull" color="#1919ae" height="80px" />
+          <Icon icon="charm:skull" color="#1919ae" height="50px" />
         )}
       </>
     );

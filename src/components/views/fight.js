@@ -33,12 +33,12 @@ class Fight extends Component {
       <div
         style={{
           display: "grid",
-          gridTemplateRows: "1fr 1fr 1fr",
-          placeItems: "center",
+          gridTemplate: "repeat(3, 1fr) / 1fr",
+
           padding: "20px",
           border: "3px solid #1919ae",
           margin: "20px",
-          justifyItems: "space-around",
+          justifyItems: "center",
           gridRowGap: "30px",
         }}
       >

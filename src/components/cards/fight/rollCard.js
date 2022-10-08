@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Dice from "./diceCard";
 
-class Roll extends Component {
+class Roll extends PureComponent {
   render() {
     const rolls = this.props.throws;
     console.log(rolls);
@@ -15,28 +15,21 @@ class Roll extends Component {
       diceDisplay = <Dice result={rolls[0]} key="1" />;
     } else {
       diceDisplay = (
-        <div>
-          <Dice result={rolls[0]} key="1" />
+        <span style={{ whiteSpace: "nowrap" }}>
+          <Dice result={rolls[0]} key="1" /> ||{" "}
           <Dice result={rolls[1]} key="2" />
-        </div>
+        </span>
       );
     }
 
     return (
-      <div
+      <span
         style={{
-          display: "grid",
-          placeItems: "center",
-          justifyItems: "space-around",
-          width: "100%",
-          gridTemplateColumns: "2fr 1fr 1fr",
-          margin: "20px",
+          whiteSpace: "nowrap",
         }}
       >
-        {diceDisplay}
-        <div style={{ whiteSpace: "nowrap" }}>+ {this.props.mod}</div>
-        <div style={{ whiteSpace: "nowrap" }}>&nbsp; = {this.props.result}</div>
-      </div>
+        {diceDisplay}+ {this.props.mod}&nbsp; = {this.props.result}
+      </span>
     );
   }
 }
