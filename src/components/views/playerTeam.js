@@ -11,7 +11,12 @@ class Game extends Component {
             {({ toggleView, userTeam }) => (
               <>
                 <Team team={userTeam} />
-                <button onClick={() => toggleView("fight")}>FIGHT!</button>
+                <button
+                  className="gameButton"
+                  onClick={() => toggleView("fight")}
+                >
+                  FIGHT!
+                </button>
               </>
             )}
           </GameContext.Consumer>

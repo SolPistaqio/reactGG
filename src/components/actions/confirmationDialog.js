@@ -8,8 +8,12 @@ class Confirmation extends Component {
         <div className="modal-content">
           <h1>{this.props.text}</h1>
 
-          <button onClick={this.props.confirm}>Confirm</button>
-          <button onClick={this.props.cancel}>Cancel</button>
+          <button className="gameButton" onClick={this.props.confirm}>
+            Confirm
+          </button>
+          <button className="gameButton" onClick={this.props.cancel}>
+            Cancel
+          </button>
         </div>
       </div>
     );

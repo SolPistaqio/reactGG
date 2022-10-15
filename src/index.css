@@ -10,7 +10,7 @@ body,
   font-family: "PressStart2P-Regular";
 }
 
-button {
+.gameButton {
   text-align: center;
   display: inline-block;
   margin: 5px;

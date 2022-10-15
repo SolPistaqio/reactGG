@@ -22,7 +22,12 @@ class Market extends Component {
       >
         <GameContext.Consumer>
           {({ abortMarketOperation }) => (
-            <button onClick={() => abortMarketOperation()}>Back To Team</button>
+            <button
+              className="gameButton"
+              onClick={() => abortMarketOperation()}
+            >
+              Back To Team
+            </button>
           )}
         </GameContext.Consumer>
         <h1

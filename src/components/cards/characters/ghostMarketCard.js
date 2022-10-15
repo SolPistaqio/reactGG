@@ -59,6 +59,7 @@ class MarketCard extends Component {
         <GhostCard ghost={this.props.ghost} />
         {this.state.enoughFunds ? (
           <button
+            className="gameButton"
             onClick={() => this.setState({ ghostChosen: true })}
             style={{ justifySelf: "center", marginTop: "10px" }}
           >

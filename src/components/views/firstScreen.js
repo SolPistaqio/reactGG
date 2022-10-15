@@ -8,7 +8,9 @@ class Start extends Component {
         <img src="/GG30.gif" alt="GhostGame logo" />
         <GameContext.Consumer>
           {({ toggleView }) => (
-            <button onClick={() => toggleView("game")}>START</button>
+            <button className="gameButton" onClick={() => toggleView("game")}>
+              START
+            </button>
           )}
         </GameContext.Consumer>
       </div>

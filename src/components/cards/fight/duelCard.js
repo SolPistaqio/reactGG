@@ -21,7 +21,7 @@ class Duel extends Component {
       return (
         <div
           style={{
-            width: "clamp(456px, 100%, 1000px)",
+            width: "clamp(350px, 100%, 1000px)",
             border: "3px dotted #fbf100",
           }}
         >
@@ -62,7 +62,7 @@ class Duel extends Component {
       return (
         <div
           style={{
-            width: "clamp(456px, 100%, 900px)",
+            width: "clamp(356px, 100%, 900px)",
             border: "3px dotted #fbf100",
             textAlign: "center",
           }}
