@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import TeamCard from "./teamCard";
 import AddGhost from "../../actions/addPlayer";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import "../../css/team.css";
 
@@ -11,19 +13,41 @@ class Team extends Component {
     let addButtons = "";
     if (needsToAdd > 0) {
       addButtons = [...Array(needsToAdd)].map((e, index) => (
-        <AddGhost key={"add" + index} />
+        <Col
+          lg
+          xl
+          xxl="4"
+          className="d-flex justify-content-center align-items-center"
+        >
+          {" "}
+          <AddGhost key={"add" + index} />
+        </Col>
       ));
     }
     return (
-      <div className="team">
-        <h1 style={{ textAlign: "center", gridColumn: "1 / 4" }}>YOUR TEAM</h1>
+      <Row className="d-flex justify-content-center align-items-center">
+        <Row>
+          <Col className="d-flex justify-content-center">
+            <h1>YOUR TEAM</h1>
+          </Col>
+        </Row>
+        <Row className="d-flex justify-content-center mt-2 mb-3">
+          {playerTeam.map((ghost, index) => {
+            return (
+              <Col
+                lg
+                xl
+                xxl="4"
+                className="d-flex justify-content-center align-items-center mb-3"
+              >
+                <TeamCard ghost={ghost} key={index} />
+              </Col>
+            );
+          })}
 
-        {playerTeam.map((ghost, index) => {
-          return <TeamCard ghost={ghost} key={index} />;
-        })}
-
-        {addButtons}
-      </div>
+          {addButtons}
+        </Row>
+      </Row>
     );
   }
 }

@@ -3,11 +3,22 @@ import { Icon } from "@iconify/react";
 import GhostCard from "../characters/ghostCard";
 import Confirmation from "../../actions/confirmationDialog";
 import { GameContext } from "../../context";
+import GhostCardSmall from "../characters/ghostCardSmall";
 
 class TeamCard extends Component {
   state = {
     ghostChosen: false,
+    width: 0,
   };
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
+  }
 
   render() {
     let confirm = "";
@@ -26,6 +37,10 @@ class TeamCard extends Component {
           )}
         </GameContext.Consumer>
       );
+    }
+    let ghost = <GhostCard ghost={this.props.ghost} />;
+    if (this.state.width <= 992) {
+      ghost = <GhostCardSmall ghost={this.props.ghost} />;
     }
     return (
       <div
@@ -49,7 +64,7 @@ class TeamCard extends Component {
             )}
           </GameContext.Consumer>
         </p>
-        <GhostCard ghost={this.props.ghost} />
+        {ghost}
 
         {confirm}
       </div>
