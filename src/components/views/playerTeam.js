@@ -13,7 +13,7 @@ class Game extends Component {
           <GameContext.Consumer>
             {({ toggleView, userTeam }) => (
               <>
-                <Row className="d-flex justify-content-center align-items-center">
+                <Row className="d-flex justify-content-center align-items-center team">
                   <Team team={userTeam} />
                 </Row>
                 <Row>
