@@ -15,6 +15,7 @@ class TeamCard extends Component {
   };
   componentDidMount() {
     window.addEventListener("resize", this.updateDimensions);
+    this.updateDimensions();
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateDimensions);

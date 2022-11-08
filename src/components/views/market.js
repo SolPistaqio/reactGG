@@ -12,29 +12,44 @@ class Market extends Component {
     return (
       <div
         style={{
-          display: "grid",
-          placeItems: "center",
+          display: "flex",
           border: "3px solid #1919ae",
           padding: "20px",
           margin: "20px",
-          gridTemplateColumns: "repeat(3, 1fr)",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignContent: "center",
         }}
       >
-        <GameContext.Consumer>
-          {({ abortMarketOperation }) => (
-            <button
-              className="gameButton"
-              onClick={() => abortMarketOperation()}
-            >
-              Back To Team
-            </button>
-          )}
-        </GameContext.Consumer>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "start",
+            alignContent: "flex-end",
+          }}
+        >
+          <GameContext.Consumer>
+            {({ abortMarketOperation }) => (
+              <button
+                className="gameButton"
+                onClick={() => abortMarketOperation()}
+              >
+                Back To Team
+              </button>
+            )}
+          </GameContext.Consumer>
+        </div>
         <h1
-          style={{ color: "white", textAlign: "center", gridColumn: "1 / 4" }}
+          style={{
+            textAlign: "center",
+            width: "100%",
+            paddingTop: "10px",
+          }}
         >
           Ghost Market
         </h1>
+
         {this.state.market.map((ghost, index) => (
           <MarketCard ghost={ghost} key={index} />
         ))}

@@ -11,6 +11,7 @@ class Duel extends Component {
   };
   componentDidMount() {
     window.addEventListener("resize", this.updateWidth);
+    this.updateWidth();
   }
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateWidth);

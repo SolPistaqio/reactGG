@@ -33,15 +33,49 @@ class Fight extends Component {
       <div
         style={{
           display: "grid",
-          gridTemplate: "repeat(3, 1fr) / 1fr",
+          gridTemplate: "1fr 2fr 2fr 2fr / 1fr",
 
           padding: "20px",
           border: "3px solid #1919ae",
           margin: "20px",
           justifyItems: "center",
           gridRowGap: "30px",
+          height: "80vh;",
         }}
       >
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "start",
+            alignContent: "flex-end",
+          }}
+        >
+          <div>
+            <GameContext.Consumer>
+              {({ toggleView }) => (
+                <button
+                  className="gameButton float-left"
+                  onClick={() => toggleView("game")}
+                >
+                  Back To Team
+                </button>
+              )}
+            </GameContext.Consumer>
+          </div>
+          <div
+            style={{
+              textAlign: "center",
+              padding: "10px",
+              width: "auto",
+              justifySelf: "center",
+              width: "100%",
+            }}
+          >
+            <h1>2/1</h1>
+            <h1>VICTORY!</h1>
+          </div>
+        </div>
         {this.state.duels.map((duel, i) => (
           <Duel duel={duel} key={i} />
         ))}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import GhostCard from "./ghostCard";
+import GhostCardSmall from "./ghostCardSmall";
 import Confirmation from "../../actions/confirmationDialog";
 import { GameContext } from "../../context";
 
@@ -17,12 +18,27 @@ class MarketCard extends Component {
     if (this.props.ghost.price > coins) {
       this.setState({ enoughFunds: false });
     }
+    window.addEventListener("resize", this.updateDimensions);
+    this.updateDimensions();
+  }
+
+  updateDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
   }
 
   render() {
     const price = this.props.ghost.price;
     const confirmationText = `Are you sure you want to buy this ghost for ${price} coins`;
     let confirm = "";
+    let ghost = <GhostCard ghost={this.props.ghost} />;
+    if (this.state.width <= 992) {
+      ghost = <GhostCardSmall ghost={this.props.ghost} />;
+    }
+
     if (this.state.ghostChosen) {
       confirm = (
         <GameContext.Consumer>
@@ -42,13 +58,20 @@ class MarketCard extends Component {
       <div
         style={{
           display: "inline-grid",
-          placeItems: "end",
+          placeItems: "center",
           border: "3px dotted #FFBB90",
           padding: "20px",
           margin: "20px",
         }}
       >
-        <p style={{ float: "right", fontSize: "20pt", margin: "0" }}>
+        <p
+          style={{
+            float: "right",
+            fontSize: "20pt",
+            margin: "0",
+            justifySelf: "end",
+          }}
+        >
           {price}
           <Icon
             icon="mingcute:copper-coin-fill"
@@ -56,7 +79,7 @@ class MarketCard extends Component {
             height="40px"
           />
         </p>
-        <GhostCard ghost={this.props.ghost} />
+        {ghost}
         {this.state.enoughFunds ? (
           <button
             className="gameButton"
@@ -68,7 +91,6 @@ class MarketCard extends Component {
         ) : (
           <p>Not enough coins</p>
         )}
-
         {confirm}
       </div>
     );

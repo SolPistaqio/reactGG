@@ -4,6 +4,7 @@ import { GameContext } from "../context";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Alert from "react-bootstrap/Alert";
 
 class Game extends Component {
   render() {
@@ -30,6 +31,15 @@ class Game extends Component {
             )}
           </GameContext.Consumer>
         </Row>
+        <Alert
+          variant="dark"
+          show={true}
+          dismissible
+          onClose={() => {}}
+          className="my-5"
+        >
+          You need 3 ghosts for a fight
+        </Alert>
       </Container>
     );
   }
