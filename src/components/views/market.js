@@ -50,8 +50,8 @@ class Market extends Component {
           Ghost Market
         </h1>
 
-        {this.state.market.map((ghost, index) => (
-          <MarketCard ghost={ghost} key={index} />
+        {this.state.market.map((ghost) => (
+          <MarketCard ghost={ghost} key={ghost.id} />
         ))}
       </div>
     );

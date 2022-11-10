@@ -15,14 +15,14 @@ class NavBar extends Component {
         }}
       >
         <GameContext.Consumer>
-          {({ round, coins }) => (
+          {({ round, coins, wins }) => (
             <>
               <p
                 style={{
                   paddingLeft: "50px",
                 }}
               >
-                Round: {round}/20 | Wins: 5/10
+                Round: {round}/20 | Wins: {wins}/10
               </p>
               <p
                 style={{

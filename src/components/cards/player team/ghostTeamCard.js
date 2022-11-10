@@ -32,7 +32,7 @@ class Team extends Component {
           </Col>
         </Row>
         <Row className="d-flex justify-content-center mt-2 mb-3">
-          {playerTeam.map((ghost, index) => {
+          {playerTeam.map((ghost) => {
             return (
               <Col
                 lg
@@ -40,7 +40,7 @@ class Team extends Component {
                 xxl="4"
                 className="d-flex justify-content-center align-items-center mb-3"
               >
-                <TeamCard ghost={ghost} key={index} />
+                <TeamCard ghost={ghost} key={ghost.id} />
               </Col>
             );
           })}

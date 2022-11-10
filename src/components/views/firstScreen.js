@@ -7,8 +7,14 @@ class Start extends Component {
       <div style={{ display: "grid", placeItems: "center" }}>
         <img src="/GG30.gif" alt="GhostGame logo" />
         <GameContext.Consumer>
-          {({ toggleView }) => (
-            <button className="gameButton" onClick={() => toggleView("game")}>
+          {({ toggleView, startNewGame }) => (
+            <button
+              className="gameButton"
+              onClick={() => {
+                startNewGame();
+                toggleView("game");
+              }}
+            >
               START
             </button>
           )}

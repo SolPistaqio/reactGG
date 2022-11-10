@@ -14,7 +14,7 @@ class MarketCard extends Component {
 
   componentDidMount() {
     const coins = this.context.coins;
-    console.log("coins " + coins);
+
     if (this.props.ghost.price > coins) {
       this.setState({ enoughFunds: false });
     }

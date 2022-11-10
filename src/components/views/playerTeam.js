@@ -7,12 +7,25 @@ import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
 
 class Game extends Component {
+  state = {
+    allert: false,
+  };
+  goToFight(team) {
+    if (team.length === 3) {
+      this.context.toggleView("fight");
+    } else {
+      this.setState({ allert: true });
+    }
+  }
+  componentDidMount() {
+    this.context.isGameOver();
+  }
   render() {
     return (
       <Container fluid>
         <Row className="justify-content-center align-middle">
           <GameContext.Consumer>
-            {({ toggleView, userTeam }) => (
+            {({ userTeam }) => (
               <>
                 <Row className="d-flex justify-content-center align-items-center team">
                   <Team team={userTeam} />
@@ -21,7 +34,7 @@ class Game extends Component {
                   <Col className="d-flex justify-content-center">
                     <button
                       className="gameButton"
-                      onClick={() => toggleView("fight")}
+                      onClick={() => this.goToFight(userTeam)}
                     >
                       FIGHT!
                     </button>
@@ -33,9 +46,11 @@ class Game extends Component {
         </Row>
         <Alert
           variant="dark"
-          show={true}
+          show={this.state.allert}
           dismissible
-          onClose={() => {}}
+          onClose={() => {
+            this.setState({ allert: false });
+          }}
           className="my-5"
         >
           You need 3 ghosts for a fight
@@ -45,4 +60,5 @@ class Game extends Component {
   }
 }
 
+Game.contextType = GameContext;
 export default Game;

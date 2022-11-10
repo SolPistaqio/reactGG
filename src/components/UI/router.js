@@ -4,6 +4,7 @@ import Start from "../views/firstScreen";
 import Game from "../views/playerTeam";
 import Market from "../views/market";
 import NavBar from "./navBar";
+import GameOver from "../views/gameOver";
 
 class Router extends Component {
   render() {
@@ -33,6 +34,14 @@ class Router extends Component {
           <div>
             <NavBar />
             <Fight />
+          </div>
+        );
+        break;
+      case "gameOver":
+        viewToShow = (
+          <div>
+            <NavBar />
+            <GameOver />
           </div>
         );
         break;

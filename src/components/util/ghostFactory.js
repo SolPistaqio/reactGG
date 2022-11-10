@@ -11,6 +11,7 @@ export function createGhost() {
   const ghost = {};
   ghost.type = Math.floor(Math.random() * 3) + 1;
   ghost.price = Math.floor(Math.random() * 3) + 2;
+  ghost.id = Date.now() + Math.random() * 10000;
 
   switch (ghost.type) {
     case 1:
