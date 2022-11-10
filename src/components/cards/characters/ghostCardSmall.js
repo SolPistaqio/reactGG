@@ -7,10 +7,10 @@ import Ghost2Small from "../../characterIMG/Ghost2-small";
 class GhostCardSmall extends PureComponent {
   render() {
     const healthBar = [];
-    for (let i = 0; i < this.props.currentHealth; i++) {
+    for (let i = 0; i < this.props.ghost.currentHealth; i++) {
       healthBar.push("heart-filled");
     }
-    if (this.props.currentHealth < this.props.maxHealth) {
+    if (this.props.ghost.currentHealth < this.props.ghost.maxHealth) {
       const numOfHearts = this.props.maxHealth - this.props.currentHealth;
       for (let i = 0; i < numOfHearts; i++) {
         healthBar.push("heart-outlined");
@@ -37,7 +37,7 @@ class GhostCardSmall extends PureComponent {
           {healthBar.map((heart, index) => (
             <Icon
               icon={"ant-design:" + heart}
-              height="35px"
+              height="25px"
               color="red"
               key={index}
             />
