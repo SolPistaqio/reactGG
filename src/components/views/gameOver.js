@@ -8,6 +8,7 @@ class GameOver extends Component {
         {({ toggleView, startNewGame, gameWon }) => (
           <div style={{ display: "grid", placeItems: "center" }}>
             <img
+              style={{ width: "100%" }}
               src={gameWon ? "/victory.gif" : "/defeat.gif"}
               alt="Final screen"
             />
