@@ -14,8 +14,6 @@ class Duel extends Component {
         className="py-2"
         fluid
         style={{
-          display: "grid",
-          placeItems: "center",
           borderTop: "3px dotted #fbf100",
         }}
       >

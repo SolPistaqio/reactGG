@@ -47,13 +47,9 @@ class Fight extends Component {
     return (
       <div
         style={{
-          display: "grid",
-
           padding: "20px",
           border: "3px solid #1919ae",
           margin: "20px",
-          justifyItems: "center",
-          gridRowGap: "2rem",
         }}
       >
         <Row
