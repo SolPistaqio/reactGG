@@ -12,6 +12,7 @@ class Game extends Component {
   };
   goToFight(team) {
     if (team.length === 3) {
+      this.context.isGameOver();
       this.context.toggleView("fight");
     } else {
       this.setState({ allert: true });
@@ -50,6 +51,7 @@ class Game extends Component {
             bottom: 0,
             width: "90%",
             margin: "5%",
+            zIndex: 9,
           }}
           variant="dark"
           show={this.state.allert}

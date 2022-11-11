@@ -38,11 +38,7 @@ class Fight extends Component {
       losers: losers,
     });
   }
-  componentWillUnmount() {
-    if (this.state.victory != null) {
-      this.context.ghostFigthAftermath(this.state.losers, this.state.victory);
-    }
-  }
+
   render() {
     return (
       <div
@@ -62,10 +58,13 @@ class Fight extends Component {
         >
           <Col md="auto">
             <GameContext.Consumer>
-              {({ toggleView }) => (
+              {({ toggleView, ghostFigthAftermath }) => (
                 <button
                   className="gameButton float-left"
-                  onClick={() => toggleView("game")}
+                  onClick={() => {
+                    ghostFigthAftermath(this.state.losers, this.state.victory);
+                    toggleView("game");
+                  }}
                 >
                   Back To Team
                 </button>

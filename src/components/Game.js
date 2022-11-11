@@ -88,10 +88,9 @@ class Game extends Component {
       (this.state.userTeam.length < 3 && this.state.coins < 2)
     ) {
       this.setState({ gameOver: true });
+      this.toggleView("gameOver");
     } else if (this.state.wins >= 10) {
       this.setState({ gameOver: true, gameWon: true });
-    }
-    if (this.state.gameOver) {
       this.toggleView("gameOver");
     }
   };
