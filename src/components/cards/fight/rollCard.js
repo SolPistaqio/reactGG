@@ -17,8 +17,7 @@ class Roll extends PureComponent {
       diceDisplay = (
         <span>
           <Dice result={rolls[0]} key="1" />
-          {" >"}
-          <Dice result={rolls[1]} key="2" />
+          <Dice result={rolls[1]} second key="2" />
         </span>
       );
     }

@@ -28,12 +28,18 @@ class Duel extends Component {
               textAlign: "right",
             }}
           >
-            <Roll
-              throws={this.props.duel.player.throws}
-              result={this.props.duel.player.result}
-              mod={this.props.duel.player.ghost.mod}
-            />
-            <GhostCardSmall ghost={this.props.duel.player.ghost} />
+            <Row>
+              <Col s={12} md="auto">
+                <Roll
+                  throws={this.props.duel.player.throws}
+                  result={this.props.duel.player.result}
+                  mod={this.props.duel.player.ghost.mod}
+                />
+              </Col>
+              <Col s={12} md="auto">
+                <GhostCardSmall ghost={this.props.duel.player.ghost} />
+              </Col>
+            </Row>
           </Col>
 
           <Col
@@ -48,12 +54,18 @@ class Duel extends Component {
           </Col>
 
           <Col m={12}>
-            <GhostCardSmall ghost={this.props.duel.enemy.ghost} />
-            <Roll
-              throws={this.props.duel.enemy.throws}
-              result={this.props.duel.enemy.result}
-              mod={this.props.duel.enemy.ghost.mod}
-            />
+            <Row>
+              <Col s={12} md="auto">
+                <GhostCardSmall ghost={this.props.duel.enemy.ghost} />
+              </Col>
+              <Col s={12} md="auto">
+                <Roll
+                  throws={this.props.duel.enemy.throws}
+                  result={this.props.duel.enemy.result}
+                  mod={this.props.duel.enemy.ghost.mod}
+                />
+              </Col>
+            </Row>
           </Col>
         </Row>
       </Container>
