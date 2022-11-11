@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
 import Duel from "../cards/fight/duelCard";
 import { calculateDuel } from "../util/caluculateDuel";
 import { GameContext } from "../context";
