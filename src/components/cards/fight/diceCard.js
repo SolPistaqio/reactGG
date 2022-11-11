@@ -1,5 +1,4 @@
 import React, { PureComponent } from "react";
-import "../../css/dice.css";
 
 class Dice extends PureComponent {
   render() {

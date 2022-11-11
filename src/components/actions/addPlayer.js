@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Icon } from "@iconify/react";
 import { GameContext } from "../context";
-import "../css/addButton.css";
 
 class AddGhost extends Component {
   state = {

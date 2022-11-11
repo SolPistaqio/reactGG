@@ -4,8 +4,6 @@ import AddGhost from "../../actions/addPlayer";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import "../../css/team.css";
-
 class Team extends Component {
   render() {
     const playerTeam = this.props.team;
@@ -39,8 +37,9 @@ class Team extends Component {
                 xl
                 xxl="4"
                 className="d-flex justify-content-center align-items-center mb-3"
+                key={ghost.id}
               >
-                <TeamCard ghost={ghost} key={ghost.id} />
+                <TeamCard ghost={ghost} />
               </Col>
             );
           })}

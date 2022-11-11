@@ -35,6 +35,137 @@ button:active {
   top: 0.3em;
 }
 
+.add {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.modalContent {
+  font-family: PressStart2P-Regular, Times, serif;
+  background-color: rgb(0, 0, 0);
+  border: 3px solid #1919ae;
+  color: white;
+}
+
+.modalContent .modal-content {
+  background-color: #000;
+  color: #fff;
+  margin: 20px;
+  padding: 20px;
+}
+
+.dice {
+  width: 4.375rem;
+  height: 4.375rem;
+  font-size: x-large;
+}
+
+.dice,
+.dice2 {
+  position: relative;
+  display: inline;
+  text-align: center;
+}
+
+.dice:before {
+  width: 4.375rem;
+  height: 4.375rem;
+}
+.dice:before,
+.dice2:before {
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  top: 6.25rem;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: border-color 0.3s;
+  -moz-transform: rotate(45deg);
+  -moz-transition: border-color 0.3s;
+  transform: rotate(45deg);
+}
+
+.dice2 {
+  margin-left: -1rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: medium;
+}
+.dice2:before {
+  width: 2rem;
+  height: 2rem;
+}
+
+.dice2 > .result {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  margin: 0.4rem;
+  display: inline-block;
+}
+.dice > .result {
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  margin: 0.9rem;
+  display: inline-block;
+}
+
+.dice > .result:before,
+.dice2 > .result:before {
+  position: absolute;
+  display: block;
+  content: "";
+  right: 0;
+  bottom: 0;
+  border: 2px solid #fbf100;
+  -webkit-transform: rotate(45deg);
+  -webkit-transition: border-color 0.3s;
+  -moz-transform: rotate(45deg);
+  -moz-transition: border-color 0.3s;
+  transform: rotate(45deg);
+}
+
+.dice2 > .result:before {
+  width: 1.5rem;
+  height: 1.5rem;
+  left: 0.2rem;
+  top: 0;
+}
+.dice > .result:before {
+  width: 3rem;
+  height: 3rem;
+  left: -0.3rem;
+  top: -0.7rem;
+}
+
+.team {
+  padding: 1.25rem;
+  border: 3px solid #1919ae;
+  margin: 1.25rem;
+  background-color: black;
+}
+
+.ghostCard,
+.ghostCardSmall {
+  display: inline-grid;
+  place-items: center;
+}
+.ghostCard {
+  min-width: 250px;
+
+  grid-template-rows: 250px 1fr;
+  align-items: "end";
+}
+
+.ghostCardSmall {
+  min-width: 70px;
+  margin: 10px;
+  grid-template: autofit / 3fr 1fr;
+}
+
 @font-face {
   font-family: "PressStart2P-Regular";
   src: local("PressStart2P-Regular"),

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
-import "../css/confirmation.css";
+
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
-//import Button from "react-bootstrap/Button";
 
 class Confirmation extends Component {
   render() {
@@ -17,7 +16,7 @@ class Confirmation extends Component {
         animation={false}
         dialogClassName="modalContent"
       >
-        <Modal.Body closeButton>
+        <Modal.Body>
           <Container>
             <Row>
               <Col>
@@ -39,19 +38,6 @@ class Confirmation extends Component {
           </Container>
         </Modal.Body>
       </Modal>
-
-      // <div className="confModal">
-      //   <div className="confModal-content">
-      //     <h1>{this.props.text}</h1>
-
-      //     <button className="gameButton" onClick={this.props.confirm}>
-      //       Confirm
-      //     </button>
-      //     <button className="gameButton" onClick={this.props.cancel}>
-      //       Cancel
-      //     </button>
-      //   </div>
-      // </div>
     );
   }
 }
