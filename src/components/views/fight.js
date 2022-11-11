@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Duel from "../cards/fight/duelCard";
 import { calculateDuel } from "../util/caluculateDuel";
 import { GameContext } from "../context";
@@ -47,16 +48,15 @@ class Fight extends Component {
       <div
         style={{
           display: "grid",
-          gridTemplate: "1fr 2fr 2fr 2fr / 1fr",
+
           padding: "20px",
           border: "3px solid #1919ae",
           margin: "20px",
           justifyItems: "center",
-          gridRowGap: "30px",
-          height: "80vh;",
+          gridRowGap: "2rem",
         }}
       >
-        <div
+        <Row
           style={{
             display: "flex",
             width: "100%",
@@ -64,7 +64,7 @@ class Fight extends Component {
             alignContent: "flex-end",
           }}
         >
-          <div>
+          <Col md="auto">
             <GameContext.Consumer>
               {({ toggleView }) => (
                 <button
@@ -75,21 +75,23 @@ class Fight extends Component {
                 </button>
               )}
             </GameContext.Consumer>
-          </div>
-          <div
+          </Col>
+          <Col
             style={{
               textAlign: "center",
               padding: "10px",
               justifySelf: "center",
               width: "100%",
+              marginTop: "0.5rem",
             }}
           >
             <h1>
               {this.state.wins}/{3 - this.state.wins}
             </h1>
             <h1>{this.state.victory ? "VICTORY!" : "DEFEAT!"}</h1>
-          </div>
-        </div>
+          </Col>
+        </Row>
+
         {this.state.duels.map((duel, i) => (
           <Duel duel={duel} key={i} />
         ))}

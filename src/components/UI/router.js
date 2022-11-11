@@ -32,7 +32,6 @@ class Router extends Component {
       case "fight":
         viewToShow = (
           <div>
-            <NavBar />
             <Fight />
           </div>
         );

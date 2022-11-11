@@ -15,8 +15,9 @@ class Roll extends PureComponent {
       diceDisplay = <Dice result={rolls[0]} key="1" />;
     } else {
       diceDisplay = (
-        <span style={{ whiteSpace: "nowrap" }}>
-          <Dice result={rolls[0]} key="1" /> ||{" "}
+        <span>
+          <Dice result={rolls[0]} key="1" />
+          {" >"}
           <Dice result={rolls[1]} key="2" />
         </span>
       );
