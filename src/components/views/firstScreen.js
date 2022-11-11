@@ -5,7 +5,11 @@ class Start extends Component {
   render() {
     return (
       <div style={{ display: "grid", placeItems: "center" }}>
-        <img style={{ width: "100%" }} src="/GG30.gif" alt="GhostGame logo" />
+        <img
+          style={{ maxWidth: "100%", maxHeight: "70%" }}
+          src="/GG30.gif"
+          alt="GhostGame logo"
+        />
         <GameContext.Consumer>
           {({ toggleView, startNewGame }) => (
             <button

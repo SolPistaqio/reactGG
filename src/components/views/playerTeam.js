@@ -45,13 +45,18 @@ class Game extends Component {
           </GameContext.Consumer>
         </Row>
         <Alert
+          style={{
+            position: "absolute",
+            bottom: 0,
+            width: "90%",
+            margin: "5%",
+          }}
           variant="dark"
           show={this.state.allert}
           dismissible
           onClose={() => {
             this.setState({ allert: false });
           }}
-          className="my-5"
         >
           You need 3 ghosts for a fight
         </Alert>

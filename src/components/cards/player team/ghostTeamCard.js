@@ -28,7 +28,7 @@ class Team extends Component {
       <Row className="d-flex justify-content-center align-items-center">
         <Row>
           <Col className="d-flex justify-content-center">
-            <h1>YOUR TEAM</h1>
+            <h1 className="d-none d-md-block">YOUR TEAM</h1>
           </Col>
         </Row>
         <Row className="d-flex justify-content-center mt-2 mb-3">

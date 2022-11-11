@@ -24,14 +24,14 @@ class Confirmation extends Component {
                 <h1>{this.props.text}</h1>
               </Col>
             </Row>
-            <Row className="mt-5">
+            <Row className="mt-5 d-grid gap-4 d-md-flex justify-content-center">
               <Col>
-                <button className="gameButton" onClick={this.props.confirm}>
+                <button className=" gameButton" onClick={this.props.confirm}>
                   Confirm
                 </button>
               </Col>
-              <Col style={{ display: "flex", justifyContent: "right" }}>
-                <button className="gameButton" onClick={this.props.cancel}>
+              <Col>
+                <button className=" gameButton" onClick={this.props.cancel}>
                   Cancel
                 </button>
               </Col>
