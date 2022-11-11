@@ -6,9 +6,9 @@ class GameOver extends Component {
     return (
       <GameContext.Consumer>
         {({ toggleView, startNewGame, gameWon }) => (
-          <div style={{ display: "grid", placeItems: "center" }}>
+          <div className="heroWrapper">
             <img
-              style={{ maxWidth: "100%", maxHeight: "70%" }}
+              className="hero"
               src={gameWon ? "/victory.gif" : "/defeat.gif"}
               alt="Final screen"
             />

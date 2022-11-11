@@ -17,19 +17,10 @@ class NavBar extends Component {
         <GameContext.Consumer>
           {({ round, coins, wins }) => (
             <>
-              <p
-                style={{
-                  paddingLeft: "50px",
-                }}
-              >
+              <p className="pl-6">
                 Round: {round}/20 | Wins: {wins}/10
               </p>
-              <p
-                style={{
-                  textAlign: "right",
-                  paddingRight: "50px",
-                }}
-              >
+              <p className="text-end pl-6">
                 {coins}
                 <Icon
                   icon="mingcute:copper-coin-fill"

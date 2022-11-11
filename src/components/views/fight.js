@@ -41,21 +41,8 @@ class Fight extends Component {
 
   render() {
     return (
-      <div
-        style={{
-          padding: "20px",
-          border: "3px solid #1919ae",
-          margin: "20px",
-        }}
-      >
-        <Row
-          style={{
-            display: "flex",
-            width: "100%",
-            justifyContent: "start",
-            alignContent: "flex-end",
-          }}
-        >
+      <div className="figthWrapper">
+        <Row className="fightRow">
           <Col md="auto">
             <GameContext.Consumer>
               {({ toggleView, ghostFigthAftermath }) => (
@@ -71,15 +58,7 @@ class Fight extends Component {
               )}
             </GameContext.Consumer>
           </Col>
-          <Col
-            style={{
-              textAlign: "center",
-              padding: "10px",
-              justifySelf: "center",
-              width: "100%",
-              marginTop: "0.5rem",
-            }}
-          >
+          <Col className="resultRow">
             <h1>
               {this.state.wins}/{3 - this.state.wins}
             </h1>

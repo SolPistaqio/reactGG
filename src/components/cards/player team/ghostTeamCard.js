@@ -16,9 +16,10 @@ class Team extends Component {
           xl
           xxl="4"
           className="d-flex justify-content-center align-items-center"
+          key={"add" + index}
         >
           {" "}
-          <AddGhost key={"add" + index} />
+          <AddGhost />
         </Col>
       ));
     }
