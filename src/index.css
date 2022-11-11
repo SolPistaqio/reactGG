@@ -186,21 +186,6 @@ button:active {
   margin: 20px;
 }
 
-.fightRow {
-  display: flex;
-  width: 100%;
-  justify-content: start;
-  align-content: flex-end;
-}
-
-.resultRow {
-  text-align: center;
-  padding: 10px;
-  justify-self: center;
-  width: 100%;
-  margin-top: 0.5rem;
-}
-
 .hero {
   max-width: 100%;
   max-height: 70%;
@@ -209,6 +194,36 @@ button:active {
   display: grid;
   place-items: center;
   grid-template: 70% 30%/ 1fr;
+}
+
+.marketWrapper {
+  display: flex;
+  border: 3px solid #1919ae;
+  padding: 20px 10px 20px 10px;
+  margin: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-content: flex-end;
+}
+
+.textHeader {
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.alertInfo {
+  width: 90%;
+  margin: 5%;
+  z-index: 9;
+  height: auto;
 }
 @font-face {
   font-family: "PressStart2P-Regular";

@@ -42,30 +42,27 @@ class Fight extends Component {
   render() {
     return (
       <div className="figthWrapper">
-        <Row className="fightRow">
-          <Col md="auto">
-            <GameContext.Consumer>
-              {({ toggleView, ghostFigthAftermath }) => (
-                <button
-                  className="gameButton float-left"
-                  onClick={() => {
-                    ghostFigthAftermath(this.state.losers, this.state.victory);
-                    toggleView("game");
-                  }}
-                >
-                  Back To Team
-                </button>
-              )}
-            </GameContext.Consumer>
-          </Col>
-          <Col className="resultRow">
-            <h1>
-              {this.state.wins}/{3 - this.state.wins}
-            </h1>
-            <h1>{this.state.victory ? "VICTORY!" : "DEFEAT!"}</h1>
-          </Col>
-        </Row>
-
+        <div className="header">
+          <GameContext.Consumer>
+            {({ toggleView, ghostFigthAftermath }) => (
+              <button
+                className="gameButton float-left"
+                onClick={() => {
+                  ghostFigthAftermath(this.state.losers, this.state.victory);
+                  toggleView("game");
+                }}
+              >
+                Back To Team
+              </button>
+            )}
+          </GameContext.Consumer>
+        </div>
+        <div className="textHeader">
+          <h1>
+            {this.state.wins}/{3 - this.state.wins}
+          </h1>
+          <h1>{this.state.victory ? "VICTORY!" : "DEFEAT!"}</h1>
+        </div>
         {this.state.duels.map((duel, i) => (
           <Duel duel={duel} key={i} />
         ))}

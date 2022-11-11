@@ -46,12 +46,10 @@ class Game extends Component {
           </GameContext.Consumer>
         </Row>
         <Alert
+          className="alertInfo"
           style={{
             position: "absolute",
-            bottom: 0,
-            width: "90%",
-            margin: "5%",
-            zIndex: 9,
+            bottom: "0",
           }}
           variant="dark"
           show={this.state.allert}
