@@ -24,11 +24,7 @@ class Roll extends PureComponent {
     }
 
     return (
-      <span
-        style={{
-          whiteSpace: "nowrap",
-        }}
-      >
+      <span>
         {diceDisplay}+ {this.props.mod}&nbsp; = {this.props.result}
       </span>
     );
