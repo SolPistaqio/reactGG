@@ -28,19 +28,17 @@ class Duel extends Component {
               textAlign: "right",
             }}
           >
-            <Row>
-              <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                <Col s={12} md="auto">
-                  <Roll
-                    throws={this.props.duel.player.throws}
-                    result={this.props.duel.player.result}
-                    mod={this.props.duel.player.ghost.mod}
-                  />
-                </Col>
-                <Col s={12} md="auto">
-                  <GhostCardSmall ghost={this.props.duel.player.ghost} />
-                </Col>
-              </div>
+            <Row style={{ display: "flex", justifyContent: "flex-end" }}>
+              <Col s={12} md="auto">
+                <Roll
+                  throws={this.props.duel.player.throws}
+                  result={this.props.duel.player.result}
+                  mod={this.props.duel.player.ghost.mod}
+                />
+              </Col>
+              <Col s={12} md="auto">
+                <GhostCardSmall ghost={this.props.duel.player.ghost} />
+              </Col>
             </Row>
           </Col>
 

@@ -54,23 +54,8 @@ class MarketCard extends Component {
       );
     }
     return (
-      <div
-        style={{
-          display: "inline-grid",
-          placeItems: "center",
-          border: "3px dotted #FFBB90",
-          padding: "20px",
-          margin: "20px",
-        }}
-      >
-        <p
-          style={{
-            float: "right",
-            fontSize: "20pt",
-            margin: "0",
-            justifySelf: "end",
-          }}
-        >
+      <div className="ghostMarketCard">
+        <p className="priceText">
           {price}
           <Icon
             icon="mingcute:copper-coin-fill"

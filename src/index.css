@@ -149,7 +149,8 @@ button:active {
 }
 
 .ghostCard,
-.ghostCardSmall {
+.ghostCardSmall,
+.ghostMarketCard {
   display: inline-grid;
   place-items: center;
 }
@@ -164,6 +165,19 @@ button:active {
   min-width: 70px;
   margin: 10px;
   grid-template: autofit / 3fr 1fr;
+}
+
+.ghostMarketCard {
+  border: 3px dotted #ffbb90;
+  padding: 20px;
+  margin: 20px;
+}
+
+.priceText {
+  float: right;
+  font-size: 20pt;
+  margin: 0;
+  justify-self: end;
 }
 
 @font-face {
