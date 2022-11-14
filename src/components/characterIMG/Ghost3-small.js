@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Icon } from "@iconify/react";
 
-class Ghost3Small extends Component {
+class Ghost3Small extends PureComponent {
   render() {
     return (
       <div>

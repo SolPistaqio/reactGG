@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Icon } from "@iconify/react";
 import GhostCard from "./ghostCard";
 import GhostCardSmall from "./ghostCardSmall";
 import Confirmation from "../../actions/confirmationDialog";
 import { GameContext } from "../../context";
 
-class MarketCard extends Component {
+class MarketCard extends PureComponent {
   static contextType = GameContext;
   state = {
     ghostChosen: false,

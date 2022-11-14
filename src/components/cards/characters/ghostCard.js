@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Ghost1 from "../../characterIMG/Ghost1";
 import Ghost2 from "../../characterIMG/Ghost2";
 import Ghost3 from "../../characterIMG/Ghost3";
 import HealthBar from "./elements/healthBar";
 
-class GhostCard extends Component {
+class GhostCard extends PureComponent {
   render() {
     const ghosts = { 1: Ghost1, 2: Ghost2, 3: Ghost3 };
     const Ghost = ghosts[this.props.ghost.type];

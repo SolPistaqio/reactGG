@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import TeamCard from "./teamCard";
 import AddGhost from "../../actions/addPlayer";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-class Team extends Component {
+class Team extends PureComponent {
   render() {
     const playerTeam = this.props.team;
     const needsToAdd = 3 - playerTeam.length;

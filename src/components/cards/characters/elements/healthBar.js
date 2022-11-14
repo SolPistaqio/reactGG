@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class HealthBar extends Component {
+class HealthBar extends PureComponent {
   render() {
     const healthBar = [];
 

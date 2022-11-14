@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { Icon } from "@iconify/react";
 import { GameContext } from "../context";
 
-class AddGhost extends Component {
+class AddGhost extends PureComponent {
   state = {
     color: "#fec302",
   };

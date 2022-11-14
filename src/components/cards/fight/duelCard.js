@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import GhostCardSmall from "../characters/ghostCardSmall";
 import Roll from "./rollCard";
 import { Icon } from "@iconify/react";
@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-class Duel extends Component {
+class Duel extends PureComponent {
   render() {
     return (
       <Container
