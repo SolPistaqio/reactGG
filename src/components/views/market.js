@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import MarketCard from "../cards/characters/ghostMarketCard";
 import { createGhosts } from "../util/ghostFactory";
 import { GameContext } from "../context";
+import useResize from "../../hooks/useResize";
 
 function Market() {
   const [market, setMarket] = useState([]);
   useEffect(() => {
     setMarket([...market, ...createGhosts(8)]);
   });
+  const width = useResize();
 
   return (
     <div className="marketWrapper">
@@ -26,7 +28,7 @@ function Market() {
       <h1 className="textHeader">Ghost Market</h1>
 
       {market.map((ghost) => (
-        <MarketCard ghost={ghost} key={ghost.id} />
+        <MarketCard ghost={ghost} key={ghost.id} width={width} />
       ))}
     </div>
   );

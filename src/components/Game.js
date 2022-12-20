@@ -2,7 +2,6 @@ import { React, Component } from "react";
 import Router from "./UI/router";
 import { createGhosts } from "./util/ghostFactory";
 import { GameContext } from "./context";
-//export const GameContext = createContext({});
 
 class Game extends Component {
   static contextType = GameContext;
