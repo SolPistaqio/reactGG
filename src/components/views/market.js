@@ -7,8 +7,10 @@ import useResize from "../../hooks/useResize";
 function Market() {
   const [market, setMarket] = useState([]);
   useEffect(() => {
-    setMarket([...market, ...createGhosts(8)]);
-  });
+    if (market.length < 8) {
+      setMarket([...market, ...createGhosts(8)]);
+    }
+  }, [market]);
   const width = useResize();
 
   return (
