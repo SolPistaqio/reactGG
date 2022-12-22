@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="heroWrapper"
+>
+  <img
+    alt="Final screen"
+    className="hero"
+    src="/victory.gif"
+  />
+  <button
+    className="gameButton"
+    onClick={[Function]}
+  >
+    START AGAIN
+  </button>
+</div>
+`;
+
+exports[`renders correctly 2`] = `
+<div
+  className="heroWrapper"
+>
+  <img
+    alt="Final screen"
+    className="hero"
+    src="/defeat.gif"
+  />
+  <button
+    className="gameButton"
+    onClick={[Function]}
+  >
+    START AGAIN
+  </button>
+</div>
+`;
